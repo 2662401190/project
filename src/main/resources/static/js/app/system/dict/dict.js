@@ -32,13 +32,12 @@ $(function() {
             }, {
                 field: 'fieldName',
                 title: '字段名'
+
             }
         ]
     };
-
     $MB.initTable('dictTable', settings);
 });
-
 function search() {
     $MB.refreshTable('dictTable');
 }

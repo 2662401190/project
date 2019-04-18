@@ -132,6 +132,7 @@ mybatis:
   configuration:
     jdbc-type-for-null: null
 
+
 mapper:
   mappers: cc.mrbird.common.config.MyMapper
   not-empty: false
