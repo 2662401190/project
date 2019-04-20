@@ -1,0 +1,127 @@
+<style>
+    .my-menu-bor{
+        margin-top: 10px;
+    }
+    .my-menu-padding{
+        padding: 0.75rem 0.1rem;
+    }
+</style>
+<link rel="stylesheet" href="js/layui/css/layui.css"/>
+<table class="layui-hide" id="Mydemo" lay-filter="demo"></table>
+<div id="my-menu-add" style="display: none">
+    <div class="modal-content">
+        <div class="modal-body">
+            <form id="menu-add-form">
+                <div class="row">
+                    <div class="col-sm-11">
+                        <div class="input-group">
+                            <span class="my-menu-bor">
+                                        菜单名称：
+                            </span>
+                            <div class="form-group">
+                                <input type="text" name="menuName" id="my-menu-name" class="form-control my-menu-padding" >
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:20px;margin-bottom:20px;">
+                    <div class="col-sm-11">
+                        <div class="input-group" style="margin-top:10px;">
+                                <span >
+					               	类型选择：
+					             </span>
+                            <div class="form-group">
+                                <label class="custom-control custom-radio">
+                                    <input name="type" type="radio"  value="0" checked class="custom-control-input my-menu-type">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">菜单</span>
+                                </label>
+                                <label class="custom-control custom-radio">
+                                    <input name="type" type="radio" value="1" class="custom-control-input my-menu-type">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">按钮</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row menu-url-list-row">
+                    <div class="col-sm-11">
+                        <div class="input-group">
+                                <span class="my-menu-bor">
+					               	菜单URL：
+					            </span>
+                            <div class="form-group">
+                                <div id="menu-url-list" >
+                                    <input id="menu-url"  type="text" name="url" class="form-control my-menu-padding" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row menu-perms-list-row">
+                    <div class="col-sm-11">
+                        <div class="input-group">
+                                <span class="my-menu-bor">
+					               	权限描述：
+					            </span>
+                            <div class="form-group">
+                                <div id="menu-perms-list">
+                                    <input id="menu-perms" type="text" name="perms" class="form-control my-menu-padding" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row menu-icon-list-row" >
+                    <div class="col-sm-11">
+                        <div class="input-group tb" >
+                                <span class="my-menu-bor">
+					               	菜单图标：
+					            </span>
+                            <div class="form-group">
+                                <input type="text" name="icon" id="icon" class="form-control my-menu-padding" >
+                                <div class="ms-parent" style="width: 100%;">
+                                    <div class="ms-drop bottom icon-drop animated flipInX" style="display: block;max-height:200px;overflow-y:auto">
+                                        <div data-th-include="system/menu/menuIcon"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-11">
+                        <div class="input-group">
+                                <span  style="justify-content: flex-start;margin-top: .5rem;">
+					               	上级菜单：
+					             </span>
+                            <div class="form-group">
+                                <div id="menuTree"></div>
+                            </div>
+                            <input type="hidden" name="parentId">
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-save" id="menu-add-button" name="save">保存</button>
+            <button type="button" class="btn btn-secondary btn-close">关闭</button>
+            <button class="btn-hide"></button>
+        </div>
+    </div>
+</div>
+<script data-th-src="@{js/autocomplete/autocomplete.js}"></script>
+<script data-th-src="@{js/app/system/menu/menuAdd.js}"></script>
+<script src="js/app/system/mymenu/menu.js"></script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+
+

@@ -36,6 +36,7 @@
     </main>
     <div data-th-include="system/user/updatePassword"></div>
 </body>
+<script th:src="@{js/layui/layui.js}"></script>
 <script data-th-inline="javascript">
 	var ctx = [[@{/}]];
 	var userName = [[${user.username}]];
