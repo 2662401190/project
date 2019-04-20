@@ -42,7 +42,6 @@ public class BaseController {
         rspData.put("total", pageInfo.getTotal());
         return rspData;
     }
-
     protected Map<String, Object> selectByPageNumSize(QueryRequest request, Supplier<?> s) {
         PageHelper.startPage(request.getPageNum(), request.getPageSize());
         PageInfo<?> pageInfo = new PageInfo<>((List<?>) s.get());
